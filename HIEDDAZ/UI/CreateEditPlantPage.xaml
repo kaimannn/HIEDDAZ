@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="HIEDDAZ.UI.CreateEditPlantPage">
+    <ContentPage.Content>
+        <Grid RowDefinitions="20,*,50,5" ColumnDefinitions="5*,15*,60*,15*,5*">
+            <StackLayout Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="3">
+                <Grid RowDefinitions="20,40,30,20,40,30,20,40,30" ColumnDefinitions="45*,5*,45*">
+                    <Label Grid.Row="0" Grid.ColumnSpan="3" Text="Name:"></Label>
+                    <Entry Grid.Row="1" Grid.ColumnSpan="3" FontSize="16" Text="{Binding Name}" HorizontalOptions="FillAndExpand" />
+                    <Label Grid.Row="3" Grid.ColumnSpan="3" Text="Watered On:"></Label>
+                    <DatePicker Grid.Row="4" Grid.ColumnSpan="3" FontSize="16" Date="{Binding WateredOn}" HorizontalOptions="FillAndExpand" />
+                    <Label Grid.Row="6" Grid.ColumnSpan="3" Text="Water Frequency: (days : hours)"></Label>
+                    <Picker Grid.Row="7" FontSize="16" HorizontalOptions="FillAndExpand">
+                        
+                    </Picker>
+                            
+                    <Label Grid.Row="7" Grid.Column="1" Text=":"></Label>
+                    <Picker Grid.Row="7" Grid.Column="2" FontSize="16" HorizontalOptions="FillAndExpand" />
+                </Grid>
+            </StackLayout>
+            <Button Grid.Row="2" Grid.Column="2" Text="Save Plant" Style="{StaticResource TestButtonStyle}" Clicked="OnSaveClicked"></Button>
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>

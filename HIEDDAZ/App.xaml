@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Application xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="HIEDDAZ.App">
+    <Application.Resources>
+        <ResourceDictionary>
+            <Color x:Key="DefaultBackgroundColor">#4D2CC7</Color>
+            <Color x:Key="TestBackgroundColor">#eaeaea</Color>
+            <Color x:Key="TestTextColor">#232323</Color>
+            <Style x:Key="TestButtonStyle" TargetType="Button">
+                <Setter Property="BackgroundColor" Value="{StaticResource TestBackgroundColor}" />
+                <Setter Property="TextColor" Value="{StaticResource TestTextColor}" />
+            </Style>
+            <Style x:Key="TitleStyle" TargetType="Label">
+                <Setter Property="FontSize" Value="35" />
+                <Setter Property="TextColor" Value="White" />
+                <Setter Property="FontFamily" Value="Montserrat-ExtraBold" />
+                <Setter Property="VerticalOptions" Value="End" />
+                <Setter Property="HorizontalOptions" Value="Center" />
+            </Style>
+            <Style x:Key="SubHeaderStyle" TargetType="Label">
+                <Setter Property="FontFamily" Value="Montserrat-Bold" />
+                <Setter Property="TextColor" Value="{StaticResource DefaultBackgroundColor}" />
+            </Style>
+        </ResourceDictionary>
+    </Application.Resources>
+</Application>
