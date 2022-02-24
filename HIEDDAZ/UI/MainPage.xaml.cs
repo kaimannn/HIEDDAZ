@@ -1,14 +1,19 @@
 ﻿using HIEDDAZ.Data;
 using Microsoft.Extensions.DependencyInjection;
 using System;
+using System.Collections.ObjectModel;
 using Xamarin.Forms;
 
 namespace HIEDDAZ.UI
 {
     public partial class MainPage : ContentPage
     {
+        private bool isFirst = true;
+
         private readonly IPlantsContext context = null;
         private readonly IServiceProvider sp = null;
+
+        public ObservableCollection<Plant> Plants { get; set; } = new ObservableCollection<Plant>();
 
         public MainPage(IPlantsContext context, IServiceProvider sp)
         {
@@ -25,7 +30,15 @@ namespace HIEDDAZ.UI
             base.OnAppearing();
 
             // Update list based in context
-            var plants = await context.GetContextAsync();
+            if (isFirst)
+            {
+                isFirst = false;
+                var plants = await context.GetContextAsync();
+
+                foreach (var plant in plants)
+                    Plants.Add(plant);
+            }
+            
         }
 
         private void OnCreateClicked(object sender, EventArgs args)

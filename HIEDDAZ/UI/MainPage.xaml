@@ -1,28 +1,31 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
-             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+             xmlns:s="clr-namespace:HIEDDAZ.UI"
+             xmlns:d="clr-namespace:HIEDDAZ.Data"
              x:Class="HIEDDAZ.UI.MainPage"
-             xmlns:p="clr-namespace:HIEDDAZ.UI">
+             x:DataType="s:MainPage">
 
-    <Grid RowDefinitions="100,50,50,50,50,*,50,5" ColumnDefinitions="20*,60*,20*">
-        <StackLayout Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="5" BackgroundColor="#53E478" Padding="24" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+    <Grid RowDefinitions="100,*,50" Margin="5">
+        <StackLayout Grid.Row="0" BackgroundColor="#53E478" Padding="24" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
             <Label Text="Hoda Ishi!" HorizontalTextAlignment="Center" TextColor="White" FontSize="36"/>
         </StackLayout>
 
-        <Grid Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="5">
-            <p:PlantItemView/>
-        </Grid>
-        <Grid Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="5">
-            <Label Text="GiraSol" HorizontalOptions="Center" VerticalOptions="Center" TextColor="Black" />
-        </Grid>
-        <Grid Grid.Row="3" Grid.Column="0" Grid.ColumnSpan="5">
-            <Label Text="Rosa" HorizontalOptions="Center" VerticalOptions="Center" TextColor="Black" />
-        </Grid>
-        <Grid Grid.Row="4" Grid.Column="0" Grid.ColumnSpan="5">
-            <Label Text="Cactus" HorizontalOptions="Center" VerticalOptions="Center" TextColor="Black" />
-        </Grid>
+        <CollectionView Grid.Row="1" ItemsLayout="VerticalList" ItemSizingStrategy="MeasureFirstItem" ItemsSource="{Binding Plants}" 
+                                            SelectionMode="Single" VerticalOptions="FillAndExpand">
+            <CollectionView.EmptyView>
+                <StackLayout HorizontalOptions="Fill" VerticalOptions="FillAndExpand">
+                    <Label Text="No countries found" HorizontalOptions="Center" VerticalOptions="CenterAndExpand" />
+                </StackLayout>
+            </CollectionView.EmptyView>
+            <CollectionView.ItemTemplate>
+                <DataTemplate x:DataType="d:Plant">
+                    <Label Text="{Binding Name}" LineBreakMode="TailTruncation" />
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+        </CollectionView>
 
-        <Button Grid.Row="6" Grid.Column="1" Text="Add Plant" Style="{StaticResource TestButtonStyle}" Clicked="OnCreateClicked"/>
+        <Button Grid.Row="2" Text="Add Plant" Style="{StaticResource TestButtonStyle}" Clicked="OnCreateClicked"/>
     </Grid>
     
 
