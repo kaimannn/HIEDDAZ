@@ -11,12 +11,48 @@
                     <Label Grid.Row="3" Grid.ColumnSpan="3" Text="Watered On:"></Label>
                     <DatePicker Grid.Row="4" Grid.ColumnSpan="3" FontSize="16" Date="{Binding WateredOn}" HorizontalOptions="FillAndExpand" />
                     <Label Grid.Row="6" Grid.ColumnSpan="3" Text="Water Frequency: (days : hours)"></Label>
-                    <Picker Grid.Row="7" FontSize="16" HorizontalOptions="FillAndExpand">
-                        
+                    <Picker Grid.Row="7" x:Name="pickerDays" FontSize="16" HorizontalTextAlignment="Center" HorizontalOptions="FillAndExpand">
+                        <Picker.Items>
+                            <x:String>0</x:String>
+                            <x:String>1</x:String>
+                            <x:String>2</x:String>
+                            <x:String>3</x:String>
+                            <x:String>4</x:String>
+                            <x:String>5</x:String>
+                            <x:String>6</x:String>
+                            <x:String>7</x:String>
+                        </Picker.Items>
                     </Picker>
-                            
                     <Label Grid.Row="7" Grid.Column="1" Text=":"></Label>
-                    <Picker Grid.Row="7" Grid.Column="2" FontSize="16" HorizontalOptions="FillAndExpand" />
+                    <Picker Grid.Row="7" x:Name="pickerHours" Grid.Column="2" FontSize="16" HorizontalTextAlignment="Center" HorizontalOptions="FillAndExpand">
+                        <Picker.Items>
+                            <x:String>0</x:String>
+                            <x:String>1</x:String>
+                            <x:String>2</x:String>
+                            <x:String>3</x:String>
+                            <x:String>4</x:String>
+                            <x:String>5</x:String>
+                            <x:String>6</x:String>
+                            <x:String>7</x:String>
+                            <x:String>8</x:String>
+                            <x:String>1</x:String>
+                            <x:String>9</x:String>
+                            <x:String>10</x:String>
+                            <x:String>11</x:String>
+                            <x:String>12</x:String>
+                            <x:String>13</x:String>
+                            <x:String>14</x:String>
+                            <x:String>15</x:String>
+                            <x:String>16</x:String>
+                            <x:String>17</x:String>
+                            <x:String>18</x:String>
+                            <x:String>19</x:String>
+                            <x:String>20</x:String>
+                            <x:String>21</x:String>
+                            <x:String>22</x:String>
+                            <x:String>23</x:String>
+                        </Picker.Items>
+                    </Picker>
                 </Grid>
             </StackLayout>
             <Button Grid.Row="2" Grid.Column="2" Text="Save Plant" Style="{StaticResource TestButtonStyle}" Clicked="OnSaveClicked"></Button>

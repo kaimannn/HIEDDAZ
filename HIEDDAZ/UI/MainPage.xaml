@@ -15,7 +15,7 @@
                                             SelectionMode="Single" VerticalOptions="FillAndExpand">
             <CollectionView.EmptyView>
                 <StackLayout HorizontalOptions="Fill" VerticalOptions="FillAndExpand">
-                    <Label Text="No countries found" HorizontalOptions="Center" VerticalOptions="CenterAndExpand" />
+                    <Label Text="No plants found" HorizontalOptions="Center" VerticalOptions="CenterAndExpand" />
                 </StackLayout>
             </CollectionView.EmptyView>
             <CollectionView.ItemTemplate>

@@ -21,11 +21,8 @@ namespace HIEDDAZ
         {
             return new ServiceCollection()
                 .AddSingleton<Data.IPlantsContext, Data.PlantsContext>()
-
                 .AddTransient<UI.MainPage>()
                 .AddTransient<UI.CreateEditPlantPage>()
-                .AddTransient<UI.PlantItemView>()
-
                 .BuildServiceProvider();
         }
     }
